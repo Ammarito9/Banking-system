@@ -1,47 +1,68 @@
-# Banking System Management
+# 🏦 Banking System Management (C++)
 
-A comprehensive C++ banking system that allows user authentication, client management, transactions, and user administration with permission-based access control.
+A comprehensive **C++ banking system** that supports user authentication, client management, transactions, and admin-level user controls with permission-based access.
 
-![Banking System Demo](https://via.placeholder.com/800x400?text=Banking+System+Demo) 
-*(Consider adding an actual screenshot here)*
+---
 
-## Features
+## 🔑 Features
 
-- **User Authentication**
-  - Secure login with username/password
-  - Permission levels for different access rights
-  - Session management
+### ✅ User Authentication
+- Secure login with username and password
+- Permission-based access control using bitmasking
+- Active session management
 
-- **Client Management**
-  - Add new clients
-  - Delete/update client information
-  - Search for clients
-  - View all clients in formatted tables
+### 👥 Client Management
+- Add, delete, update client details
+- Search for clients by account number or name
+- View all clients in a clean, formatted table
 
-- **Transaction Processing**
-  - Deposit funds
-  - Withdraw funds
-  - View total balances
-  - Transaction history
+### 💰 Transaction Processing
+- Deposit and withdraw funds
+- Display total account balances
+- View client transaction history
 
-- **User Administration** (Admin only)
-  - Add/remove system users
-  - Set user permissions
-  - Update user credentials
+### 🛠️ User Administration (Admin Only)
+- Add or remove system users
+- Set specific permissions for users
+- Update user credentials (username/password)
 
-- **Data Persistence**
-  - All data saved to text files
-  - Automatic loading on startup
+### 💾 Data Persistence
+- All client, user, and transaction data saved to local text files
+- Automatic loading and saving on system startup/shutdown
 
-## Prerequisites
+---
 
-- C++ Compiler (GCC, Clang, or MSVC)
-- CMake (optional, for building)
-- Git (for version control)
+## 🧱 Permissions System
 
-## Installation
+The system uses a **bitmask-based permission system** to control user access:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/banking-system.git
-   cd banking-system
+| Permission Bit | Value | Functionality          |
+|----------------|-------|------------------------|
+| Show clients   | 1     | View client list       |
+| Add client     | 2     | Add new client         |
+| Delete client  | 4     | Remove a client        |
+| Update client  | 8     | Modify client details  |
+| Find client    | 16    | Search for a client    |
+| Transactions   | 32    | Deposit/Withdraw funds |
+| Manage users   | 64    | Admin control panel    |
+| Full Access    | -1    | All permissions (admin)|
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+- A C++ compiler (GCC, Clang, or MSVC)
+
+### 🧪 Build & Run
+```bash
+g++ main.cpp -o BankingSystem
+./BankingSystem
+```
+### 👤 Default Admin Credentials
+For testing purposes:
+- Username: admin
+- Password: 1234
+
+### 📄 License
+This project is open-source — free to use, modify, and distribute.
